@@ -9,10 +9,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    var days = 23;
+
+    return MaterialApp(
       home: Material(
         child: Center(
-          child: Text("Hello World2"),
+          child: Text("Hello World day $days"),
         ),
       ),
     );
