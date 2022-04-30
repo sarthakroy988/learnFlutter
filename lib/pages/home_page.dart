@@ -9,9 +9,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text("Catalog App"),
-        ),
+        title: const Text("Catalog App"),
       ),
       body: Center(
         child: Text("Hello World day $days"),
