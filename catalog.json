@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": "Codepur001",
+            "name": "iphone 12 pro",
+            "desc": "Apple iphone 12th Generation",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=940&hei=1112&fmt=png-alpha&.v=1644969385433"
+        },
+        {
+            "id": "Codepur002",
+            "name": "iphone 13 pro",
+            "desc": "Apple iphone 13th Generation",
+            "price": 1999,
+            "color": "#00ac51",
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=940&hei=1112&fmt=png-alpha&.v=1644969385433"
+        },
+        {
+            "id": "Codepur003",
+            "name": "iphone 14 pro",
+            "desc": "Apple iphone 14th Generation",
+            "price": 2999,
+            "color": "#33505a",
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=940&hei=1112&fmt=png-alpha&.v=1644969385433"
+        }
+    ]
+}
