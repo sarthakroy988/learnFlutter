@@ -2,8 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:flutter_catalog/models/catalog.dart';
+import 'package:flutter_catalog/pages/home_widgets/catalog_header.dart';
+import 'package:flutter_catalog/pages/home_widgets/catalog_list.dart';
 import 'package:flutter_catalog/widget/drawer.dart';
+import 'package:flutter_catalog/widget/themes.dart';
 //Velocity X import
 import "package:velocity_x/velocity_x.dart";
 
@@ -41,60 +45,23 @@ class _HomePageState extends State<HomePage> {
     //var days = 24;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Catalog App"),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-              ? GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                  ),
-                  itemBuilder: (context, index) {
-                    final item = CatalogModel.items[index];
-                    return Card(
-                      clipBehavior: Clip.antiAlias,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: GridTile(
-                        header: Container(
-                          child: Text(
-                            item.name,
-                            style: const TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(12),
-                          decoration: const BoxDecoration(
-                            color: Colors.deepPurple,
-                          ),
-                        ),
-                        child: Image.network(item.image),
-                        footer: Container(
-                          child: Text(
-                            item.price.toString(),
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                          padding: const EdgeInsets.all(8),
-                          decoration: const BoxDecoration(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                  itemCount: CatalogModel.items.length,
-                )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                ),
+      backgroundColor: MyTheme.creamColor,
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CatalogHeader(),
+              // ignore: unnecessary_null_comparison
+              if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+                CatalogList().expand()
+              else
+                CircularProgressIndicator().centered().expand(),
+            ],
+          ),
         ),
       ),
-      drawer: const MyDrawer(),
     );
   }
 }
